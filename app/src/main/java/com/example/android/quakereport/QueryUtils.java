@@ -83,7 +83,8 @@ public final class QueryUtils {
                 String location = properties.getString("place");
                 double magnitude = properties.getDouble("mag");
                 long unixtime = properties.getLong("time");
-                earthquakes.add(new Earthquake(location, unixtime, magnitude));
+                String url = properties.getString("url");
+                earthquakes.add(new Earthquake(location, unixtime, magnitude, url));
             }
         } catch (JSONException e) {
             // If an error is thrown when executing any of the above statements in the "try" block,
