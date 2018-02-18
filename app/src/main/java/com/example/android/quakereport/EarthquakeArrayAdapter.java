@@ -87,7 +87,7 @@ public class EarthquakeArrayAdapter extends ArrayAdapter {
         String location = currentEarthquake.getLocation();
         Pattern locationOffsetRegex = Pattern.compile("\\d*km [A-Z]* of ");
         Matcher patternMatcher = locationOffsetRegex.matcher(location);
-        String locationOffset = "Near the";
+        String locationOffset = getContext().getString(R.string.location_offset_default);
         if(patternMatcher.find()){
             locationOffset = location.substring(patternMatcher.start(), patternMatcher.end());
             location = location.substring(patternMatcher.end());
